@@ -18,8 +18,11 @@ while true do
 if message == "light_on" then
     print("DEBUG:", message)
     light_on()
+    break
 elseif message == "light_off" then
     print("DEBUG:", message)
     light_off()
+    break
 end
 end
+return
