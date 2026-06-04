@@ -4,7 +4,7 @@
 -- HARDWARE INITIALIZATION
 
 rout0 = peripheral.find("modem", rednet.open)
-message = rednet.receive()
+id, message, protocol = rednet.receive()
 
 function wait_packet()
     print("DEBUG:", message)
@@ -15,6 +15,7 @@ print("TNNS ROUTER OPERATING SYSTEM")
 print("Firmware Version: 0.1")
 
 print("Waiting for packets...")
+
 while true do
 wait_packet()
 end
