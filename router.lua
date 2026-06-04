@@ -4,9 +4,9 @@
 -- HARDWARE INITIALIZATION
 
 rout0 = peripheral.find("modem", rednet.open)
-id, message, protocol = rednet.receive()
 
 function wait_packet()
+    id, message, protocol = rednet.receive()
     print("DEBUG:", message)
     rednet.broadcast(message, wlan)
 end
@@ -18,5 +18,4 @@ print("Waiting for packets...")
 
 while true do
 wait_packet()
-return
 end
