@@ -18,4 +18,5 @@ print("Waiting for packets...")
 
 while true do
 wait_packet()
+return
 end
