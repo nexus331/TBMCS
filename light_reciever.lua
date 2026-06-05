@@ -16,8 +16,10 @@ end
 function wait_command()
     id, message, protocol = rednet.receive("wlan")
     if message == "light_on" then
+        print("DEBUG:", message)
         light_on()
     elseif message == "light_off" then
+        print("DEBUG:", message)
         light_off()
     end
 end
