@@ -6,9 +6,9 @@
 rout0 = peripheral.find("modem", rednet.open)
 
 function wait_packet()
-    id, message, protocol = rednet.receive()
+    id, message, protocol = rednet.receive("lan")
     print("DEBUG:", message)
-    rednet.broadcast(message, wlan)
+    rednet.broadcast(message, "wlan")
 end
 
 print("TNNS ROUTER OPERATING SYSTEM")

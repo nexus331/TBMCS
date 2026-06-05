@@ -1,6 +1,5 @@
 lan0 = peripheral.find("modem", rednet.open)
 
-id, message, protocol = rednet.receive(wlan)
 
 function light_on()
     redstone.setOutput("back", true)
@@ -14,15 +13,16 @@ function light_off()
     redstone.setOutput("back", false)
 end
 
+function wait_command()
+    id, message, protocol = rednet.receive("wlan")
+    if message == "light_on" then
+        light_on()
+    elseif message == "light_off" then
+        light_off()
+    end
+end
+
+print("Waiting for command...")
 while true do
-if message == "light_on" then
-    print("DEBUG:", message)
-    light_on()
-    break
-elseif message == "light_off" then
-    print("DEBUG:", message)
-    light_off()
-    break
+wait_command()
 end
-end
-return
