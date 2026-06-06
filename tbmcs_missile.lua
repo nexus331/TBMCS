@@ -33,10 +33,10 @@ function wait_command()
             sleep(0.3)
             redstone.setOutput("left", true)
             redstone.setOutput("bottom",true)
-            redstone.setOutput("back", true)
             sleep(4)
             redstone.setOutput("bottom", false)
             redstone.setOutput("left",false)
+            redstone.setOutput("back", true)
         end
     end
 end
